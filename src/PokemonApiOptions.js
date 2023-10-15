@@ -1,19 +1,22 @@
 import * as React from "react";
 import { Dropdown } from "@mui/base/Dropdown";
 import { Menu } from "@mui/base/Menu";
-import { MenuButton } from "@mui/base/MenuButton";
-import { MenuItem, menuItemClasses } from "@mui/base/MenuItem";
-import { styled } from "@mui/system";
+import { MenuItem } from "@mui/base/MenuItem";
 
 export default function PokemonApiOptions() {
-  const handleMenuClick = (menuItem) => {
-    return menuItem;
+  const selectedOption = {
+    apiOption: "By Pokemon",
   };
+  const handleMenuClick = (menuItem) => {};
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   function openMenu() {
     console.log("Opened");
     setIsMenuOpen(true);
+  }
+  function menuItemSelection(apiOption) {
+    setPokemonApiOption(apiOption);
+    console.log();
   }
   const [pokemonApiOption, setPokemonApiOption] =
     React.useState("Search Options");
@@ -21,17 +24,19 @@ export default function PokemonApiOptions() {
   const SelectedOption = (menuItem) => {};
   return (
     <Dropdown open={isMenuOpen}>
-      <button onClick={openMenu}>{pokemonApiOption}</button>
+      <button onClick={openMenu}>{selectedOption}</button>
       <Menu slots={{ listbox: "ul" }}>
-        <MenuItem onClick={handleMenuClick("By Pokemon")}>By Pokemon</MenuItem>
-        <MenuItem onClick={handleMenuClick("By Location")}>
+        <MenuItem onClick={menuItemSelection("By Pokemon")}>
+          By Pokemon
+        </MenuItem>
+        <MenuItem onClick={menuItemSelection("By Location")}>
           By Location
         </MenuItem>
-        <MenuItem onClick={handleMenuClick("By Type")}>By Type</MenuItem>
+        <MenuItem onClick={menuItemSelection("By Type")}>By Type</MenuItem>
       </Menu>
     </Dropdown>
   );
 }
 
-// click menu button
-// once clicked i need it to display the dropdown
+// need to make the text clickable
+// once clicked it needs to replace the text in the dropdown
