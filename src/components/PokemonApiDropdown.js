@@ -14,16 +14,16 @@ export default function PokemonApiDropdown() {
 
   return (
     <Dropdown>
-      <TriggerButton>Dashboard</TriggerButton>
+      <TriggerButton>Search By</TriggerButton>
       <Menu slots={{ listbox: StyledListbox }}>
-        <StyledMenuItem onClick={createHandleMenuClick("Profile")}>
-          Profile
+        <StyledMenuItem onClick={createHandleMenuClick("By Pokemon")}>
+          By Pokemon
         </StyledMenuItem>
-        <StyledMenuItem onClick={createHandleMenuClick("My account")}>
-          My account
+        <StyledMenuItem onClick={createHandleMenuClick("By Type")}>
+          By Type
         </StyledMenuItem>
-        <StyledMenuItem onClick={createHandleMenuClick("Log out")}>
-          Log out
+        <StyledMenuItem onClick={createHandleMenuClick("By Location")}>
+          By Location
         </StyledMenuItem>
       </Menu>
     </Dropdown>
