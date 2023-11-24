@@ -3,9 +3,6 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import OutlinedInput from "@mui/material/OutlinedInput";
 
-// Form needs to say the selected search by
-// have a search bar
-
 export default function PokegetForm() {
   const [formTitle, setFormTitle] = React.useState("By Pokemon");
 
