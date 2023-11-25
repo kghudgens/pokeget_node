@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const redisClient = require("./config/redis");
 const app = express();
 
 const pageRoutes = require("./routes/index");
