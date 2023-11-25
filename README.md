@@ -7,6 +7,11 @@ Clone the project
 ```
 git clone https://github.com/kghudgens/pokeget_node.git
 ```
+
+In a new terminal, you must start the Redis database
+```
+redis-server
+```
 Navigate to the server project
 ```
 npm start
