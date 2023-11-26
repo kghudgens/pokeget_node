@@ -1,11 +1,13 @@
-const express = require("express");
-const cors = require("cors");
-const redisClient = require("./config/redis");
+"use strict";
+import express from "express";
+import cors from "cors";
+import { connectToRedis } from "./config/redis.js";
+import { searchByPokemonName } from "./api/pokemonApi.js";
+import { router } from "./routes/index.js";
+
 const app = express();
 
-const pageRoutes = require("./routes/index");
-
-app.use(pageRoutes);
+app.use(router);
 app.use(
   cors({
     origin: "*",
@@ -13,6 +15,8 @@ app.use(
 );
 
 const PORT = process.env.PORT || 3001;
+connectToRedis();
+searchByPokemonName("ditto");
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
