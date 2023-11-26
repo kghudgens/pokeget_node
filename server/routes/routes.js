@@ -1,5 +1,5 @@
-const express = require("express");
-const app = express();
+import express from "express";
+
 const router = express.Router();
 
 // home page
@@ -8,11 +8,17 @@ router.get("/", (req, res) => {
   res.send("home");
 });
 
-// test api
-router.get("/api", (req, res) => {
+// endpoint to see all past searches
+router.get("/history", (req, res) => {
   res.json({
     message: "Hello from server",
   });
 });
 
-module.exports = router;
+router.get("/about"),
+  (req, res) => {
+    res.json({
+      message: "About page",
+    });
+  };
+export default router;
