@@ -1,9 +1,7 @@
-const express = require("express");
-const pokegetRoutes = require("./routes");
+import router from "./routes.js";
 
-const router = express.Router();
+router.use("/", router);
+router.use("/history", router);
+router.use("/about", router);
 
-router.use("/", pokegetRoutes);
-router.use("/api", pokegetRoutes);
-
-module.exports = router;
+export { router };
