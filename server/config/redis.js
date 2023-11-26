@@ -1,4 +1,6 @@
-const redis = require("redis");
+"use strict";
+import redis from "redis";
+
 const redisClient = redis.createClient();
 
 redisClient.on("error", (err) => console.log("Redis Client Error", err));
@@ -12,6 +14,8 @@ async function connectToRedis() {
   }
 }
 
-connectToRedis();
+function saveSearch(name, metadata) {
+  redisClient.set(name, metadata);
+}
 
-module.exports = redisClient;
+export { saveSearch, connectToRedis };
