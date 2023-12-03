@@ -14,8 +14,13 @@ async function connectToRedis() {
   }
 }
 
-function saveSearch(name, metadata) {
-  redisClient.set(name, metadata);
+async function saveSearch(pokemonName, pokemonObject) {
+  try {
+    await redisClient.set(pokemonName, JSON.stringify(pokemonObject));
+    console.log(`${pokemonName} saved to Redis`);
+  } catch (error) {
+    console.error("Error saving pokemon to Redis: ", error);
+  }
 }
 
 export { saveSearch, connectToRedis };
