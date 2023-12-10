@@ -2,7 +2,7 @@
 
 import axios from "axios";
 import { Pokemon } from "../models/pokemon.js";
-import { saveSearch } from "../config/redis.js";
+import { saveSearch } from "../../db/redis/redis.js";
 
 function searchByPokemonName(name) {
   axios

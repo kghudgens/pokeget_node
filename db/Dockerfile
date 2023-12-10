@@ -1,4 +1,4 @@
-FROM redis:7.2.3
+FROM redis:latest
 WORKDIR /db
 
 COPY . /db/
