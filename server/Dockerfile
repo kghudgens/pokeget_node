@@ -1,6 +1,6 @@
 FROM node:14.17.0-alpine3.12
+COPY server /server
 WORKDIR /server
-COPY . .
 RUN npm install
-CMD ["npm start"]
 EXPOSE 3001
+CMD ["node", "index.js"]
