@@ -1,0 +1,12 @@
+---
+- name: open terminal
+  become: True
+  hosts: managed_node
+
+  tasks:
+    - name: open terminal
+      ansible.builtin.command: ls -la
+      
+
+
+# - name: start application
