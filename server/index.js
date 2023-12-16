@@ -1,7 +1,7 @@
 "use strict";
 import express from "express";
 import cors from "cors";
-import { connectToRedis } from "../db/redis/redis.js";
+import { connectToRedis } from "./redis/redis.js";
 import { searchByPokemonName, searchForAbilities } from "./api/pokemonApi.js";
 import { router } from "./routes/index.js";
 
