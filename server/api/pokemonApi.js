@@ -7,9 +7,11 @@ import {
 } from "../helpers/extractHelpers.js";
 import { saveSearch } from "../redis/redis.js";
 
+const api = "https://pokeapi.co/api/v2/";
+
 function searchByPokemonName(name) {
   axios
-    .get(`https://pokeapi.co/api/v2/pokemon/${name}`)
+    .get(`${api}` + `/pokemon/${name}`)
     .then((response) => {
       const responseData = response.data;
       const returnedPokemon = extractValuesFromPokemon(responseData);
@@ -21,9 +23,9 @@ function searchByPokemonName(name) {
 }
 
 // get habitat
-function searchForAbilities(name) {
+function searchForAbilities(ability) {
   axios
-    .get(`https://pokeapi.co/api/v2/ability/${name}/`)
+    .get(`${api}` + `/ability/${ability}/`)
     .then((response) => {
       const responseData = response.data;
       const returnedPokemonAbility = extractValuesFromAbility(responseData);
