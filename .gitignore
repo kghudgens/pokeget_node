@@ -5,13 +5,13 @@ client/node_modules
 /.pnp
 .pnp.js
 server/node_modules
-db/node_modules
+node_modules
 # testing
 /coverage
-
+todolist.txt
 # production
 /build
-
+dump.rdb
 # misc
 .DS_Store
 .env.local
